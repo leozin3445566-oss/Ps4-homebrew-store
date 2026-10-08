@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4 Games</title>
+  <style>
+    body {
+      background: #101522;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 { color: #39a9ff; }
+    input, button {
+      padding: 12px;
+      margin: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+    }
+    a { color: #39a9ff; }
+    .card {
+      background: #202b40;
+      padding: 18px;
+      margin: 15px auto;
+      max-width: 450px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>PS4 Games</h1>
+  <p>Site de arquivos para PlayStation 4</p>
+
+  <div class="card">
+    <h2>Downloads</h2>
+    <p>Adicione aqui os links diretos dos seus arquivos.</p>
+    <input id="url" type="url" placeholder="Cole o link do arquivo">
+    <br>
+    <button onclick="baixar()">Abrir arquivo</button>
+  </div>
+
+  <script>
+    function baixar() {
+      const url = document.getElementById('url').value.trim();
+      if (!/^https?:\/\//i.test(url)) {
+        alert('Cole um link válido começando com https://');
+        return;
+      }
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
